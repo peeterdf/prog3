@@ -14,7 +14,7 @@ public class arreglo {
 		return cantidad == 0;
 	}
  
- public void insertarAlComienzo(int nuevo){
+public void insertarAlComienzo(int nuevo){
 
 		if(arreglo[arreglo.length-1] != 0){
 
@@ -32,10 +32,12 @@ public class arreglo {
 		arreglo[0] = nuevo;
 		cantidad++;
 	}
+ 
 public int size(){
 	return cantidad;
 }
- public boolean estaOrdenadoSinRec(){
+
+public boolean estaOrdenadoSinRec(){
 //	 int pos =0;
 //	 while (pos< cantidad-1 && arreglo[pos]>=arreglo[pos+1]){
 //		 pos++;
