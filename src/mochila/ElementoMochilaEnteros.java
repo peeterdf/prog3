@@ -41,7 +41,14 @@ public class ElementoMochilaEnteros implements Comparable<ElementoMochilaEnteros
 	}
 	@Override
 	public int compareTo(ElementoMochilaEnteros em) {
-		return ((this.getValor()/this.getPeso())-(em.getValor()/em.getPeso()));
+		if (  (this.getPeso()/this.getValor() ) - ( em.getPeso()/em.getValor()) <0   ){
+			return -1;
+		}else if((this.getPeso()/this.getValor() ) - (em.getPeso()/em.getValor())==0){
+			return 0;
+		}else
+		{
+			return 1;
+		}
 		
 	}
 	
