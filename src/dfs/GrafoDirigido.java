@@ -1,6 +1,8 @@
 package dfs;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Stack;
 
 public class GrafoDirigido {
@@ -126,6 +128,33 @@ public class GrafoDirigido {
 		return false;
 	}
 
+	
+	public void bfs(){
+		ArrayList<Vertice> aux = new ArrayList<Vertice>();
+		for (int i = 0; i < vertices.size(); i++) {
+			aux.add(new Vertice(i,Estado.No_Visitado));
+		}
+		
+		Queue<Integer> cola=new LinkedList<Integer>();
+		aux.get(0).setEstado(Estado.Visitandose);
+		aux.get(0).setDistancia(0);
+		cola.add(0);
+		while(!cola.isEmpty()){
+			int tope =cola.poll();
+			for (int i = 0; i < vertices.get(tope).size(); i++) {
+				int adyacente = vertices.get(tope).at(i);
+				if(aux.get(adyacente).getEstado()==Estado.No_Visitado){
+					aux.get(adyacente).setEstado(Estado.Visitandose);
+					aux.get(adyacente).setDistancia(aux.get(tope).getDistancia()+1);
+					aux.get(adyacente).setPadre(tope);
+					cola.add(adyacente);
+				}
+			}
+			aux.get(tope).setEstado(Estado.Visitado);
+			
+		}
+	}
+	
 	private String imprimirarr(ArrayList<Vertice> aux) {
 		String resultado="";
 		for (int i = 0; i < aux.size(); i++) {

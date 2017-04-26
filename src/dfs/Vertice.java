@@ -7,11 +7,31 @@ public class Vertice {
 	Estado estado;
 	int tiempoini;
 	int tiempofinal;
+	int distancia;
+	int padre;
 	
 	public Vertice(int a, Estado b){
 		indice =a;
 		estado=b;
+		distancia=-1;
+		padre=-1;
 		
+	}
+
+	public int getDistancia() {
+		return distancia;
+	}
+
+	public void setDistancia(int distancia) {
+		this.distancia = distancia;
+	}
+
+	public int getPadre() {
+		return padre;
+	}
+
+	public void setPadre(int padre) {
+		this.padre = padre;
 	}
 
 	public int getTiempoini() {

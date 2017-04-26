@@ -14,8 +14,8 @@ public class main {
 		}
 				
 		for (int i = 0; i < (n-2); i++) {
-			grafod.addArco(i, i+2);
 			grafod.addArco(i, i+1);
+			grafod.addArco(i, i+2);
 		}
 
 		//System.out.println(grafod.imprimirAdyacencias());
@@ -51,7 +51,9 @@ public class main {
 
 	public static void main(String[] args) {
 		
-		
+		GrafoDirigido grafod = crearGrafo(n);
+		grafod.bfs();
+		/*
 		
 		long time_start, time_end;
 		time_start = System.nanoTime();
@@ -77,7 +79,7 @@ public class main {
 		time_end3 = System.nanoTime();
 		System.out.println("the task has taken "+ ( time_end3 - time_start3 )/1000.0 +" milliseconds");
 		
-		
+		*/
 	}
 
 }
